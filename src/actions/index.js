@@ -12,12 +12,12 @@ export const getChar = () => dispatch => {
     dispatch({type: FETCH_CHAR_START});
     axios
     .get(`https://swapi.co/api/people/`)
-    .then(res => {
+    .then((res) => {
         console.log(res);
-        dispatch({type: FETCH_CHAR_SUCCESS, payload: res.data})
+        dispatch({type: FETCH_CHAR_SUCCESS, payload: res.data.results})
     })
-    .catch(err => {
+    .catch((err) => {
         console.log(err);
-        dispatch({type: FETCH_CHAR_FAILURE, payload: err})
+        dispatch({type: FETCH_CHAR_FAILURE, payload: err.onerror})
     })
 }
