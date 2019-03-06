@@ -42,6 +42,6 @@ export default connect(
   mapStateToProps,
   {
     getChar
-    /* action creators go here */
   }
-)(CharacterListView);
+)
+(CharacterListView);
